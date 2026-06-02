@@ -1,6 +1,7 @@
 package com.Rashad.project.controllers.auth;
 
 import com.Rashad.project.dto.auth.RegistrationReq;
+import com.Rashad.project.dto.auth.RegistrationRes;
 import com.Rashad.project.services.auth.RegistrationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class RegistrationController {
     }
     //Creating User
     @PostMapping("/registration")
-    public ResponseEntity<?> registration(@Valid @RequestBody RegistrationReq user) {
-        return null;
+    public ResponseEntity<RegistrationRes> registration(@Valid @RequestBody RegistrationReq user) {
+        return ResponseEntity.ok(registrationService.createUser(user));
     }
 }

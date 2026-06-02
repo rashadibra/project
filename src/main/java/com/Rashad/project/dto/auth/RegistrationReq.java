@@ -14,7 +14,7 @@ public class RegistrationReq {
     @NotBlank(message = "Ad boş ola bilməz")
     @Size(min = 8, max = 50, message = "Ad 8-50 simvol olmalıdır")
     private String userName;
-    @Email
+    @Email(message = "Email qeyd edin!")
     @NotBlank(message = "Email boş ola bilməz")
     private String userEmail;
     @NotBlank(message = "Parol boş ola bilməz")
