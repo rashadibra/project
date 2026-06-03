@@ -27,13 +27,6 @@ public class GlobalExceptionHandler {
                 body(new ValidationErrorResponse(400, "Validation failed!", errors, Instant.now()));
     }
 
-//    /// BADREQUEST
-//    @ExceptionHandler(BadRequestException.class)
-//    public ResponseEntity<ErrorResponse> handleBadRequest(BadRequestException ex) {
-//        ErrorResponse error = new ErrorResponse(400, ex.getMessage(), Instant.now());
-//        return ResponseEntity.status(400).body(error);
-//    }
-
     ///ProductNotFoundException
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ErrorResponse>  ProductNotFound(ProductNotFoundException ex) {
@@ -54,6 +47,4 @@ public class GlobalExceptionHandler {
         ErrorResponse error = new ErrorResponse(404, ex.getMessage(), Instant.now());
         return ResponseEntity.status(404).body(error);
     }
-
-
 }

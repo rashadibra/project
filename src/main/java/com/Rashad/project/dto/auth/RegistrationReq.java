@@ -18,7 +18,7 @@ public class RegistrationReq {
     @NotBlank(message = "Email boş ola bilməz")
     private String userEmail;
     @NotBlank(message = "Parol boş ola bilməz")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
-            message = "Ən azı 8 simvol, 1 böyük hərf, 1 kiçik hərf, 1 rəqəm və 1 xüsusi simvol olmalıdır")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])\\S{8,}$",
+            message = "Parol ən azı 8 simvol olmalı, ən azı 1 böyük hərf, 1 kiçik hərf və 1 rəqəm ehtiva etməli, boşluq simvolu olmamalıdır.")
     private String userPassword;
 }
