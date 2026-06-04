@@ -1,4 +1,4 @@
-package com.Rashad.project.dto.auth;
+package com.Rashad.project.auth.dto.registration;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

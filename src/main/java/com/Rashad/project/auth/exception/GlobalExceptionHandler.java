@@ -1,7 +1,7 @@
-package com.Rashad.project.exception;
+package com.Rashad.project.auth.exception;
 
-import com.Rashad.project.dto.exception.ValidationErrorResponse;
-import com.Rashad.project.dto.exception.ErrorResponse;
+import com.Rashad.project.auth.dto.exception.ValidationErrorResponse;
+import com.Rashad.project.auth.dto.exception.ErrorResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -37,6 +37,13 @@ public class GlobalExceptionHandler {
     /// EMAIL ALREADY EXISTS
     @ExceptionHandler(EmailAlreadyExistsException.class)
     public ResponseEntity<ErrorResponse> handleEmailAlreadyExists(EmailAlreadyExistsException ex) {
+        ErrorResponse error = new ErrorResponse(409, ex.getMessage(), Instant.now());
+        return ResponseEntity.status(409).body(error);
+    }
+
+    /// USERNAME ALREADY EXISTS
+    @ExceptionHandler(UsernameAlreadyExists.class)
+    public ResponseEntity<ErrorResponse> handleUsernameAlreadyExists(UsernameAlreadyExists ex) {
         ErrorResponse error = new ErrorResponse(409, ex.getMessage(), Instant.now());
         return ResponseEntity.status(409).body(error);
     }

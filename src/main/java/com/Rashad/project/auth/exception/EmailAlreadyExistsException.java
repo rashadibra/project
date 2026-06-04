@@ -1,4 +1,4 @@
-package com.Rashad.project.exception;
+package com.Rashad.project.auth.exception;
 
 public class EmailAlreadyExistsException extends RuntimeException{
     public EmailAlreadyExistsException(String email){

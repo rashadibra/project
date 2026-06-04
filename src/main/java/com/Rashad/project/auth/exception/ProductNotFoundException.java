@@ -1,4 +1,4 @@
-package com.Rashad.project.exception;
+package com.Rashad.project.auth.exception;
 
 public class ProductNotFoundException extends RuntimeException{
     public ProductNotFoundException(Long id){
